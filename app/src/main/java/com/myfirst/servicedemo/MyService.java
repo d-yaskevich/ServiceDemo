@@ -64,7 +64,7 @@ public class MyService extends Service {
         runnable = this::showRandomNumber; // == new Runnable() { ... }
         handler.postDelayed(runnable, TIME_DELAY_MILLIS);
 
-        return super.onStartCommand(intent, flags, startId);
+        return START_NOT_STICKY;
     }
 
     public void showRandomNumber() {

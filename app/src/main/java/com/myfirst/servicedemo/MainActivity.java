@@ -132,7 +132,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         unregisterReceiver(broadcastReceiver);
-        onUnbindService(null);
+        if (bound) {
+            onUnbindService(null);
+        }
         super.onDestroy();
     }
 }
